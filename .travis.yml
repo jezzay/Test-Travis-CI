@@ -3,7 +3,7 @@ language: c
 before_install:
   - sudo add-apt-repository ppa:directhex/monoxide -y && sudo apt-get update
   - sudo apt-get update -qq > /dev/null
-  - sudo apt-get install -qq mono-devel mono-gmcs mono-complete > /dev/null
+  - sudo apt-get install -qq mono-devel mono-gmcs mono-complete 
   - mozroots --import --sync
   - export EnableNuGetPackageRestore=true
   - cd TestWebApp/
