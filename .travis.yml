@@ -5,7 +5,9 @@ before_install:
   - sudo apt-get install -qq mono-devel mono-gmcs > /dev/null
   - mozroots --import --sync
   - export EnableNuGetPackageRestore=true
+  - cd TestWebApp/
+  - wget http://nuget.org/nuget.exe .
+  - mono nugext.exe restore
 
 script:
-  - cd TestWebApp/
   - xbuild TestWebApp.sln
