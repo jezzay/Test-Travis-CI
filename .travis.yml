@@ -6,7 +6,7 @@ before_install:
   - mozroots --import --sync
   - export EnableNuGetPackageRestore=true
   - cd TestWebApp/
-  - wget http://nuget.org/nuget.exe .
+  - wget http://nuget.org/nuget.exe
   - mono nuget.exe restore
 
 script:
