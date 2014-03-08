@@ -7,7 +7,7 @@ before_install:
   - export EnableNuGetPackageRestore=true
   - cd TestWebApp/
   - wget http://nuget.org/nuget.exe
-  - mono --runtime=v4.5 nuget.exe restore
+  - mono --runtime=v4.0 nuget.exe restore
 
 script:
   - xbuild TestWebApp.sln
