@@ -20,7 +20,7 @@ namespace TestWebApp.Tests.Controllers
             Assert.NotNull(result);
             Assert.Equal(2, result.Count());
             Assert.Equal("value1", result.ElementAt(0));
-            Assert.Equal("value3", result.ElementAt(1));
+            Assert.Equal("value2", result.ElementAt(1));
         }
 
         [Fact]
