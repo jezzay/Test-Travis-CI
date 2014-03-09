@@ -1,6 +1,8 @@
 Test-Travis-CI
 ==============
-A test project to build a C# project with mono on Travis CI
+A test project to build a C# project with mono on Travis CI. 
+
+The sample code is from selecting New Project -> ASP.NET Web Application in Visual Studio
 
 Build status
 --------------
