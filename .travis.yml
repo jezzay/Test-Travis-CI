@@ -14,4 +14,5 @@ script:
   - cd TestWebApp/
   - mono --runtime=v4.0 nuget.exe restore
   - xbuild /verbosity:quiet TestWebApp.sln
+  - ls -l /packages/
   - mono --runtime=v4.0 /packages/xunit.runners.1.9.2/tools/xunit.console.exe /TestWebApp.Tests/bin/Debug/TestWebApp.Tests.dll
