@@ -1,17 +1,21 @@
 language: c
 
 before_install:
+# Set up Mono
   - sudo add-apt-repository ppa:directhex/monoxide -y && sudo apt-get update
   - sudo apt-get install mono-devel mono-mcs
   - mozroots --import --sync
-  - wget -P TestWebApp http://nuget.org/nuget.exe
 
+# Download nuget executable to run package restore, save to source root
+  - wget -P TestWebApp http://nuget.org/nuget.exe
 
 script:
   - cd TestWebApp/
 # Restore all packages from nuget repository
   - mono --runtime=v4.0 nuget.exe restore
+
 # Build project, show only errors in console output
-  - xbuild /consoleloggerparameters:ErrorsOnly /verbosity:quiet TestWebApp.sln
+  - xbuild  /nologo /consoleloggerparameters:NoSummary /verbosity:quiet TestWebApp.sln
+
 # Run xunit tests
   - mono --runtime=v4.0 packages/xunit.runners.1.9.2/tools/xunit.console.exe TestWebApp.Tests/bin/Debug/TestWebApp.Tests.dll
