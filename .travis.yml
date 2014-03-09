@@ -2,7 +2,7 @@ language: c
 
 before_install:
   - sudo add-apt-repository ppa:directhex/monoxide -y && sudo apt-get update
-  - sudo apt-get install mono-devel mono-mcs nunit-console
+  - sudo apt-get install mono-devel mono-mcs
   - mozroots --import --sync
   - mono --version
   - export XBUILD_COLORS=errors=brightred,warnings=blue
@@ -14,3 +14,4 @@ script:
   - cd TestWebApp/
   - mono --runtime=v4.0 nuget.exe restore
   - xbuild /verbosity:quiet TestWebApp.sln
+  - mono --runtime=v4.0 /packages/xunit.runners.1.9.2/tools/xunit.console.exe /TestWebApp.Tests/bin/Debug/TestWebApp.Tests.dll
