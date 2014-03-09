@@ -14,4 +14,4 @@ before_install:
 script:
   - cd TestWebApp/
   - mono --runtime=v4.0 nuget.exe restore
-  - xbuild --verbosity quiet TestWebApp.sln
+  - xbuild /verbosity quiet TestWebApp.sln
