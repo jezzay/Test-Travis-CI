@@ -5,6 +5,7 @@ before_install:
   - sudo apt-get install mono-devel mono-mcs nunit-console
   - mozroots --import --sync
   - mono --version
+  - env: XBUILD_COLORS=errors=brightred,warnings=blue
   - wget -P TestWebApp http://nuget.org/nuget.exe
 
 
