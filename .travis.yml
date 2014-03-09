@@ -15,6 +15,7 @@ script:
   - mono --runtime=v4.0 nuget.exe restore
 
 # Build project, show only errors in console output
+# The /consoleloggerparameters:NoSummary flag does not seem to remove the warnnings... oh well
   - xbuild  /nologo /consoleloggerparameters:NoSummary /verbosity:quiet TestWebApp.sln
 
 # Run xunit tests
