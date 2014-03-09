@@ -4,10 +4,12 @@ before_install:
   - sudo add-apt-repository ppa:directhex/monoxide -y && sudo apt-get update
   - sudo apt-get install mono-devel mono-gmcs nunit-console
   - mozroots --import --sync
+  - mono --version
   - export EnableNuGetPackageRestore=true
   - cd TestWebApp/
   - wget http://nuget.org/nuget.exe
-  - mono --runtime=v4.0 nuget.exe restore
+  - 
 
 script:
-  - xbuild TestWebApp.sln
+  - mono --runtime=v4.0 nuget.exe restore
+# - xbuild build.sln
