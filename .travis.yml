@@ -5,11 +5,11 @@ before_install:
   - sudo apt-get install mono-devel mono-mcs nunit-console
   - mozroots --import --sync
   - mono --version
-  - export EnableNuGetPackageRestore=true
-  - cd TestWebApp/
-  - wget http://nuget.org/nuget.exe
-  - 
+  - wget -P TestWebApp http://nuget.org/nuget.exe
+
+
 
 script:
-  - mono --runtime=v4.5 nuget.exe restore
+  - cd TestWebApp/
+  - mono --runtime=v4.0 nuget.exe restore
   - xbuild TestWebApp.sln
