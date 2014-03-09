@@ -1,14 +1,12 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
 using TestWebApp.Controllers;
+using Xunit;
 
 namespace TestWebApp.Tests.Controllers
 {
-    [TestClass]
     public class ValuesControllerTest
     {
-        [TestMethod]
         public void Get()
         {
             // Arrange
@@ -18,13 +16,13 @@ namespace TestWebApp.Tests.Controllers
             IEnumerable<string> result = controller.Get();
 
             // Assert
-            Assert.IsNotNull(result);
-            Assert.AreEqual(2, result.Count());
-            Assert.AreEqual("value1", result.ElementAt(0));
-            Assert.AreEqual("value2", result.ElementAt(1));
+            Assert.NotNull(result);
+            Assert.Equal(2, result.Count());
+            Assert.Equal("value1", result.ElementAt(0));
+            Assert.Equal("value2", result.ElementAt(1));
         }
 
-        [TestMethod]
+
         public void GetById()
         {
             // Arrange
@@ -34,10 +32,10 @@ namespace TestWebApp.Tests.Controllers
             string result = controller.Get(5);
 
             // Assert
-            Assert.AreEqual("value", result);
+            Assert.Equal("value", result);
         }
 
-        [TestMethod]
+
         public void Post()
         {
             // Arrange
@@ -49,7 +47,7 @@ namespace TestWebApp.Tests.Controllers
             // Assert
         }
 
-        [TestMethod]
+
         public void Put()
         {
             // Arrange
@@ -61,7 +59,7 @@ namespace TestWebApp.Tests.Controllers
             // Assert
         }
 
-        [TestMethod]
+
         public void Delete()
         {
             // Arrange
