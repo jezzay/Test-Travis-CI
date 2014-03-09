@@ -7,6 +7,7 @@ namespace TestWebApp.Tests.Controllers
 {
     public class ValuesControllerTest
     {
+        [Fact]
         public void Get()
         {
             // Arrange
@@ -22,7 +23,7 @@ namespace TestWebApp.Tests.Controllers
             Assert.Equal("value2", result.ElementAt(1));
         }
 
-
+        [Fact]
         public void GetById()
         {
             // Arrange
@@ -35,7 +36,7 @@ namespace TestWebApp.Tests.Controllers
             Assert.Equal("value", result);
         }
 
-
+        [Fact]
         public void Post()
         {
             // Arrange
@@ -47,7 +48,7 @@ namespace TestWebApp.Tests.Controllers
             // Assert
         }
 
-
+        [Fact]
         public void Put()
         {
             // Arrange
@@ -59,7 +60,7 @@ namespace TestWebApp.Tests.Controllers
             // Assert
         }
 
-
+        [Fact]
         public void Delete()
         {
             // Arrange
